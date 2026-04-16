@@ -22,15 +22,13 @@ function Bloc () {
 
     return (
         <div>
-            <div>
-                <button onClick={() => setOpen(true)}>
-                    Ouvrir la modal
-                </button>
-                <Previsualisation open={open} onClose={() => setOpen(false)} text={bloc?.content} />
-            </div>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="name" value={bloc?.name} onChange={(e) => setBloc({...bloc, name: e.target.value})} />
                 <button type="submit">Enregistrer</button>
+                <button type="button" onClick={() => setOpen(true)}>
+                    Ouvrir la modal
+                </button>
+                <Previsualisation open={open} onClose={() => setOpen(false)} text={bloc?.content} />
                 <br />
                 <textarea style={{ width: '100%', height: '95vh' }} name="content" value={bloc?.content} onChange={(e) => setBloc({...bloc, content: e.target.value})}></textarea><br />
             </form>

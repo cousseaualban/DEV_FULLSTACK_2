@@ -1,11 +1,12 @@
 import { useState } from "react";
 import style from './previsualisation.module.css';
 import { marked } from "marked";
+import DOMPurify from "dompurify";
 
 function Previsualisation({ open, onClose, text }) {
   if (!open) return null;
 
-  const html = marked.parse(text || '');
+  const html = DOMPurify.sanitize(marked.parse(text || ''));
   return (
     <div className={style.overlay} onClick={onClose}>
       <div className={style.modal} onClick={(e) => e.stopPropagation()}>
