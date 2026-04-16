@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteBloc } from "../../store/slices/blocsSlice";
+import { useState } from "react";
 
 function Blocs () {
     const blocs = useSelector((store) => (store.blocs.list));

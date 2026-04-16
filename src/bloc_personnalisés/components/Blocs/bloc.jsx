@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveBloc } from "../../store/slices/blocsSlice";
+import Previsualisation from "../modals/previsualisation";
 
 function Bloc () {
     const { id } = useParams();
@@ -9,6 +10,7 @@ function Bloc () {
     const dispatch = useDispatch();
 
     const [bloc, setBloc] = useState(blocs.find(bloc => bloc.id === id) ?? { name: '', content: '' });
+    const [open, setOpen] = useState(false);
 
     const navigation = useNavigate();
 
@@ -20,6 +22,12 @@ function Bloc () {
 
     return (
         <div>
+            <div>
+                <button onClick={() => setOpen(true)}>
+                    Ouvrir la modal
+                </button>
+                <Previsualisation open={open} onClose={() => setOpen(false)} text={bloc?.content} />
+            </div>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="name" value={bloc?.name} onChange={(e) => setBloc({...bloc, name: e.target.value})} />
                 <button type="submit">Enregistrer</button>
