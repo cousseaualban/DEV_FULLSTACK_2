@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Blocs from "../bloc_personnalisés/components/Blocs/Blocs";
+import Blocs from "../bloc_personnalisés/components/Blocs/blocs";
 import Bloc from "../bloc_personnalisés/components/Blocs/bloc";
 import ImageLibrary from "../pages/ImageLibrary/ImageLibrary";
   
