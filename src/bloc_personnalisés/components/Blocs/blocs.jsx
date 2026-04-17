@@ -38,6 +38,7 @@ function Blocs () {
                 Importer
                 <input type='file' accept=".part.mdlc, .parts.mdlc" hidden onChange={handleImport} />
             </label>
+            <button onClick={() => navigation('/images')}>Accéder à la bibliothèque d'images</button>
             { blocs.map(bloc => (
                 <div key={bloc.id}>
                     <Link to={`bloc/${bloc.id}`}>{bloc.name}</Link>

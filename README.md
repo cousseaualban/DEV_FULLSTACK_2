@@ -1,16 +1,22 @@
-# React + Vite
+Membres du groupe : Sam DRONNEAU, Ilef BELAED, Alban COUSSEAU
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Répartition des tâches :
 
-Currently, two official plugins are available:
+1- Fichiers Markdown => Ilef BELAED
+    a. Organisation dans une arborescence (dans des dossiers) 
+    b. Gestion des fichiers Markdown 
+    c. Rédaction du contenu Markdown 
+    d. Prévisualisation 
+    e. Import et export des fichiers
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+2 - Blocs personnalisés => Sam DRONNEAU
+    a. Création de blocs personnalisés en HTML / Markdown 
+    b. Gestion des blocs personnalisés sous forme d'une bibliothèque de blocs 
+    c. Affectation de raccourcis claviers pour insérer des blocs personnalisés dans un fichier Markdown 
+    d. Import & export des blocs personnalisés
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3 - Bibliothèque d'images => Alban COUSSEAU 
+    a. Import d'images via bouton ou glisser-déposer dans la bibliothèque 
+    b. Gestion des images dans la bibliothèque 
+    c. Insertion d'images de la bibliothèque dans un fichier Markdown 
+    d. Import & export des images
