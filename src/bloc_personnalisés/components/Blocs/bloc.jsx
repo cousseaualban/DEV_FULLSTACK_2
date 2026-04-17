@@ -26,7 +26,7 @@ function Bloc () {
                 <input type="text" name="name" value={bloc?.name} onChange={(e) => setBloc({...bloc, name: e.target.value})} />
                 <button type="submit">Enregistrer</button>
                 <button type="button" onClick={() => setOpen(true)}>
-                    Ouvrir la modal
+                    Prévisualisation
                 </button>
                 <Previsualisation open={open} onClose={() => setOpen(false)} text={bloc?.content} />
                 <br />
