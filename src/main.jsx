@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import App from './bloc_personnalisés/App'
 
 import { Provider } from "react-redux";
 import { store } from "./app/store";
