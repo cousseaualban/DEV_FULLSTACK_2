@@ -9,6 +9,8 @@ Répartition des tâches :
     d. Prévisualisation 
     e. Import et export des fichiers
 
+=> NB : Pour renommer &/ou supprimer un fichier ou un dossier, il faut faire clic droit sur le nom de l'élément. Les options renommer & supprimer sont ensuite proposées.
+
 2 - Blocs personnalisés => Sam DRONNEAU
     a. Création de blocs personnalisés en HTML / Markdown 
     b. Gestion des blocs personnalisés sous forme d'une bibliothèque de blocs 
