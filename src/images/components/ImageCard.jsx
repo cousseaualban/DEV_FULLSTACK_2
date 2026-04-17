@@ -13,12 +13,6 @@ export default function ImageCard({ image }) {
     exportImage(image);
   };
 
-  const handleUse = () => {
-    dispatch({
-      type: "markdown/insertImage",
-      payload: image.base64,
-    });
-  };
 
   const handleRename = () => {
     const newName = prompt("Nouveau nom ?", image.name);
@@ -43,7 +37,7 @@ export default function ImageCard({ image }) {
         <button onClick={handleRename}>✏️</button>
         <button onClick={handleDelete}>🗑️</button>
         <button onClick={handleExport}>⬇️</button>
-        <button onClick={handleUse}>📎 Utiliser</button>
+        {/* <button>📎 Utiliser</button> */}
       </div>
     </div>
   );
