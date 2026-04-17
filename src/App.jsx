@@ -11,9 +11,6 @@ import MarkdownEditor from "./components/MarkdownEditor";
 import Previsualisation from "./components/modals/Previsualisation";
 
 function App() {
-
-}
-function App() {
   const [items, setItems] = useState([]);
 
   const [selectedFolder, setSelectedFolder] = useState(null);
