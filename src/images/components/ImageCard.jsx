@@ -37,7 +37,7 @@ export default function ImageCard({ image }) {
         <button onClick={handleRename}>✏️</button>
         <button onClick={handleDelete}>🗑️</button>
         <button onClick={handleExport}>⬇️</button>
-        <button>📎 Utiliser</button>
+        {/* <button>📎 Utiliser</button> */}
       </div>
     </div>
   );
