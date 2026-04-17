@@ -1,5 +1,5 @@
-import { renameItem } from "../../actions/renameItem";
-import { deleteItem } from "../../actions/deleteItem";
+import { renameItem } from "../../utils/renameItem";
+import { deleteItem } from "../../utils/deleteItem";
 
 export default function ContextMenu({ contextMenu, setContextMenu, setItems }) {
   if (!contextMenu) return null;

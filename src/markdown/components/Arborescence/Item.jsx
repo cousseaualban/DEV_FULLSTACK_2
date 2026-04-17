@@ -1,4 +1,4 @@
-import { getChildren, isDescendant } from "./arborescenceUtils";
+import { getChildren, isDescendant } from "../../utils/arborescenceUtils";
 
 export default function Item({
   item,

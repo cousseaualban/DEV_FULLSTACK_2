@@ -29,10 +29,10 @@ function ShortcutInput({ value, onChange }) {
     <input
       type="text"
       value={display}
-      placeholder="Appuie sur un raccourci"
+      placeholder="Appuie pour entrer un raccourci"
       onKeyDown={handleKeyDown}
       readOnly
-      className="border border-black px-2 py-1"
+      className="border border-black px-2 py-1 rounded w-80"
     />
   );
 }

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import exportMarkdown from "../actions/exportMarkdown";
+import exportMarkdown from "../utils/exportMarkdown";
 import { useSelector } from "react-redux";
 
 export default function MarkdownEditor({
@@ -64,7 +64,6 @@ export default function MarkdownEditor({
       text +
       textarea.value.substring(end);
 
-    // 🔥 update React state
     setItems(prev =>
       prev.map(i =>
         i.id === selectedFile.id
@@ -78,7 +77,6 @@ export default function MarkdownEditor({
       content: newValue
     }));
 
-    // reposition curseur après render
     setTimeout(() => {
       textarea.selectionStart = textarea.selectionEnd =
         start + text.length;
@@ -86,28 +84,23 @@ export default function MarkdownEditor({
   }
 
   return (
-    <div style={{ marginTop: "20px" }}>
-
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h3>📄 {selectedFile.name}.md</h3>
-        <button onClick={() => exportMarkdown(selectedFile)}>
-            📤 Exporter .md
-        </button>
-        <button onClick={() => setPreviewOpen(true)}>
-            Prévisualiser
-        </button>
-        
+    <div className="flex flex-col gap-5 h-full overflow-hidden">
+      <div className="flex justify-between flex-shrink-0">
+        <div className="text-xl">{selectedFile.name}.md</div>
+        <div className="flex gap-2">
+          <button className="bg-white hover:bg-gray-200 border py-2 px-4 rounded" onClick={() => setPreviewOpen(true)}>
+              Prévisualiser
+          </button>
+          <button className="bg-purple-600 hover:bg-purple-700 border border-purple-500 text-white py-2 px-4 rounded" onClick={() => exportMarkdown(selectedFile)}>
+              Exporter
+          </button>
+        </div>
       </div>
 
       <textarea
         ref={textareaRef}
-        style={{
-          width: "98%",
-          height: "300px",
-          marginTop: "10px",
-          padding: "10px"
-        }}
         value={selectedFile.content || ""}
+        className="flex-1 overflow-auto rounded border border-black px-2 py-1"
         onChange={handleChange}
       />
     </div>

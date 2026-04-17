@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addImage } from "../imagesSlice";
+import { addImage } from "../../store/slices/imagesSlice";
 import { createImageFromBase64 } from "../services/imageFactory";
 import { fileToBase64 } from "../../services/base64Converter";
 

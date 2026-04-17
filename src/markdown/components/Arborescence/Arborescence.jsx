@@ -1,6 +1,6 @@
 import Item from "./Item";
 import ContextMenu from "./ContextMenu";
-import { getChildren } from "./arborescenceUtils";
+import { getChildren } from "../../utils/arborescenceUtils";
 
 export default function Arborescence({
   items,

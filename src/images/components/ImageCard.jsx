@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { deleteImage, renameImage } from "../imagesSlice";
+import { deleteImage, renameImage } from "../../store/slices/imagesSlice";
 import { exportImage } from "../services/exportService";
 
 export default function ImageCard({ image }) {

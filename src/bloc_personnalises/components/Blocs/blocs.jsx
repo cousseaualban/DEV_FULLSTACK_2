@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteBloc, saveBloc } from "../../../store/slices/blocsSlice";
 import { useState } from "react";
-import Previsualisation from "../modals/previsualisation";
+import Previsualisation from "../../../components/modals/previsualisation";
 import { exportSelectedBlocs } from "../../utils/exportBloc";
 import { importBloc } from "../../utils/importBloc";
 
@@ -57,6 +57,7 @@ function Blocs () {
                     <tr>
                         <th></th>
                         <th>Nom du bloc</th>
+                        <th>Raccourcis</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -75,6 +76,7 @@ function Blocs () {
                                 />
                             </td>
                             <td>{bloc.name}</td>
+                            <td>{bloc.shortcut}</td>
 
                             <td className="flex gap-4">
                                 <button
@@ -105,7 +107,7 @@ function Blocs () {
                 </tbody>
             </table>
             
-            <Previsualisation open={open} onClose={() => setOpen(false)} text={blocContent} />
+            <Previsualisation open={open} onClose={() => setOpen(false)} text={blocContent} title="Prévisualisation du bloc"/>
         </>
     )
 }

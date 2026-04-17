@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { selectImages } from "../../images/utils/selectors";
-import ImageUploader from "../../images/components/ImageUploader";
-import ImageCard from "../../images/components/ImageCard";
-import { exportImages } from "../../images/services/exportService";
-import { importImagesFromFile } from "../../images/services/importService";
-import { addImage } from "../../images/imagesSlice";
+import { selectImages } from "./utils/selectors";
+import ImageUploader from "./components/ImageUploader";
+import ImageCard from "./components/ImageCard";
+import { exportImages } from "./services/exportService";
+import { importImagesFromFile } from "./services/importService";
+import { addImage } from "../store/slices/imagesSlice";
 
 export default function ImageLibrary() {
   const navigation = useNavigate()
