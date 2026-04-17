@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import imagesReducer from "../images/imagesSlice";
-import blocsSlice from "../bloc_personnalisés/store/slices/blocsSlice";
+import blocsSlice from "./slices/blocsSlice";
 import { loadImages } from "../services/storage/localStorageService";
 import { saveImages } from "../services/storage/localStorageService";
 

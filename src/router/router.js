@@ -2,12 +2,16 @@ import { createBrowserRouter } from "react-router-dom";
 import Blocs from "../bloc_personnalisés/components/Blocs/blocs";
 import Bloc from "../bloc_personnalisés/components/Blocs/bloc";
 import ImageLibrary from "../pages/ImageLibrary/ImageLibrary";
+import header from "../components/header";
   
 const routes = [
-  { path: '/', name: 'liste-bloc', Component: Blocs},
-  { path: 'bloc', name: 'add-bloc', Component: Bloc},
-  { path: 'bloc/:id', name: 'bloc', Component: Bloc},
-  { path: 'images', name: 'images', Component: ImageLibrary }
+  { path: '/', Component: header, children: [
+    { index: true, name: 'liste-bloc', Component: Blocs},
+    { path: 'bloc', name: 'add-bloc', Component: Bloc},
+    { path: 'bloc/:id', name: 'bloc', Component: Bloc},
+    { path: 'images', name: 'images', Component: ImageLibrary }
+  ]}
+  
 ];
 
 

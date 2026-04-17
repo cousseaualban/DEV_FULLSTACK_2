@@ -19,16 +19,6 @@ export default function ImageLibrary() {
       gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
       gap: 16,
     },
-    importButton: {
-      display: "inline-block",
-      marginLeft: 10,
-      marginTop: 10,
-      padding: "8px 12px",
-      background: "#1976d2",
-      color: "white",
-      borderRadius: 6,
-      cursor: "pointer",
-    },
   };
 
   const handleExportAll = () => {
@@ -54,25 +44,27 @@ export default function ImageLibrary() {
       
       <ImageUploader />
 
-      <div style={styles.grid}>
+      <div className="flex gap-2 pl-2">
+        <button className="bg-white hover:bg-gray-200 border py-2 px-4 rounded" onClick={handleExportAll}>
+          Exporter bibliothèque
+        </button>
+        <label className="bg-purple-600 hover:bg-purple-700 border border-purple-500 text-white py-2 px-4 rounded">
+          Importer fichier(s)
+
+          <input
+            type="file"
+            accept=".img.mdlc,.imgs.mdlc"
+            onChange={handleImport}
+            hidden
+          />
+        </label>
+      </div>
+
+      <div className="grid m-2 gap-4 [grid-template-columns:repeat(auto-fill,minmax(200px,1fr))]">
         {images.map((img) => (
           <ImageCard key={img.id} image={img} />
         ))}
       </div>
-      <button onClick={handleExportAll}>
-        Exporter bibliothèque
-      </button>
-      <label style={styles.importButton}>
-        Importer fichier(s)
-
-        <input
-          type="file"
-          accept=".img.mdlc,.imgs.mdlc"
-          onChange={handleImport}
-          hidden
-        />
-      </label>
-      <button onClick={() => navigation('/')}>Accéder aux blocs personnalisés</button>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { saveBloc } from "../../store/slices/blocsSlice";
+import { saveBloc } from "../../../store/slices/blocsSlice";
 import Previsualisation from "../modals/previsualisation";
 
 function Bloc () {

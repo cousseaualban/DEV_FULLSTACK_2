@@ -1,5 +1,4 @@
 import { useState } from "react";
-import style from './previsualisation.module.css';
 import { marked } from "marked";
 import DOMPurify from "dompurify";
 
@@ -8,13 +7,15 @@ function Previsualisation({ open, onClose, text }) {
 
   const html = DOMPurify.sanitize(marked.parse(text || ''));
   return (
-    <div className={style.overlay} onClick={onClose}>
-      <div className={style.modal} onClick={(e) => e.stopPropagation()}>
-        <h2>Prévisualisation du bloc</h2>
+    <div className="fixed inset-0 bg-black/50 flex justify-center items-center" onClick={onClose}>
+      <div className="bg-white p-5 min-w-[300px]" onClick={(e) => e.stopPropagation()}>
+        <div className="flex justify-between gap-3">
+          <div className="text-xl">Prévisualisation du bloc</div>
+          <button onClick={onClose}>Fermer</button>
+        </div>
         <hr />
-        {html ? <div dangerouslySetInnerHTML={{ __html: html }} /> : <p>Aucun contenu à afficher</p>}
-        <hr />
-        <button onClick={onClose}>Fermer</button>
+        {html ? <div className="prose" dangerouslySetInnerHTML={{ __html: html }} /> : <p>Aucun contenu à afficher</p>}
+  
       </div>
     </div>
   );
