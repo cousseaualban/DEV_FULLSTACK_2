@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectImages } from "../../features/images/utils/selectors";
-import ImageUploader from "../../features/images/components/ImageUploader";
-import ImageCard from "../../features/images/components/ImageCard";
-import { exportImages } from "../../features/images/services/exportService";
-import { importImagesFromFile } from "../../features/images/services/importService";
-import { addImage } from "../../features/images/imagesSlice";
+import { useNavigate } from "react-router-dom";
+import { selectImages } from "../../images/utils/selectors";
+import ImageUploader from "../../images/components/ImageUploader";
+import ImageCard from "../../images/components/ImageCard";
+import { exportImages } from "../../images/services/exportService";
+import { importImagesFromFile } from "../../images/services/importService";
+import { addImage } from "../../images/imagesSlice";
 
 export default function ImageLibrary() {
+  const navigation = useNavigate()
   const dispatch = useDispatch();
   const images = useSelector(selectImages);
 
@@ -70,6 +72,7 @@ export default function ImageLibrary() {
           hidden
         />
       </label>
+      <button onClick={() => navigation('/')}>Accéder aux blocs personnalisés</button>
     </div>
   );
 }

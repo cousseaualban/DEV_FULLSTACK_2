@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { addImage } from "../imagesSlice";
 import { createImageFromBase64 } from "../services/imageFactory";
-import { fileToBase64 } from "../../../services/base64Converter";
+import { fileToBase64 } from "../../services/base64Converter";
 
 export default function ImageUploader() {
   const dispatch = useDispatch();

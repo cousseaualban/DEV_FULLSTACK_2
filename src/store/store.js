@@ -1,13 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import imagesReducer from "../features/images/imagesSlice";
+import imagesReducer from "../images/imagesSlice";
+import blocsSlice from "../bloc_personnalisés/store/slices/blocsSlice";
 import { loadImages } from "../services/storage/localStorageService";
 import { saveImages } from "../services/storage/localStorageService";
 
 const preloadedImages = loadImages();
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     images: imagesReducer,
+    blocs: blocsSlice
   },
   preloadedState: {
     images: {
@@ -20,3 +22,5 @@ store.subscribe(() => {
   const state = store.getState();
   saveImages(state.images.images);
 });
+
+export default store;

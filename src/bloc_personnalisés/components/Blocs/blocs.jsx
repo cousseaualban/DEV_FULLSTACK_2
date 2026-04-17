@@ -14,6 +14,7 @@ function Blocs () {
             <h1>Liste des blocs</h1>
             <hr />
             <button onClick={() => navigation('/bloc')}>Ajouter</button>
+            <button onClick={() => navigation('/images')}>Accéder à la bibliothèque d'images</button>
             { blocs.map(bloc => (
                 <div key={bloc.id}>
                     <Link to={`bloc/${bloc.id}`}>{bloc.name}</Link>
