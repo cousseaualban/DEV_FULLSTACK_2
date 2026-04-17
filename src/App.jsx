@@ -1,13 +1,17 @@
 import Toolbar from "./components/Toolbar";
 import addFolder from "./actions/addFolder.js";
 import addFile from "./actions/addFile.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Arborescence from "./components/Arborescence/Arborescence";
 import MarkdownEditor from "./components/MarkdownEditor";
 import Previsualisation from "./components/modals/Previsualisation";
 
+
 function App() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(() => {
+  const saved = localStorage.getItem("items");
+  return saved ? JSON.parse(saved) : [];
+});
 
   const [selectedFolder, setSelectedFolder] = useState(null);
 
@@ -18,6 +22,9 @@ function App() {
 
   const [previewOpen, setPreviewOpen] = useState(false);
 
+useEffect(() => {
+  localStorage.setItem("items", JSON.stringify(items));
+}, [items]);
   return (
 
     <div>
