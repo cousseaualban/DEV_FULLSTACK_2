@@ -4,8 +4,8 @@ export const blocsSlice = createSlice({
     name: 'blocs',
     initialState: {
         list: [
-            { id: crypto.randomUUID(), name: "Bloc 1", content: "Ceci est le contenu du bloc 1" },
-            { id: crypto.randomUUID(), name: "Bloc 2", content: "Ceci est le contenu du bloc 2" }
+            { id: crypto.randomUUID(), name: "Bloc 1", content: "Ceci est le contenu du bloc 1", shortcut: '' },
+            { id: crypto.randomUUID(), name: "Bloc 2", content: "Ceci est le contenu du bloc 2", shortcut: '' }
         ]
     },
     reducers: {
