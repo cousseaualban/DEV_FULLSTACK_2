@@ -67,6 +67,12 @@ export default function Item({
           }
         }}
 
+        onDoubleClick={() => {
+          if (item.type === "file") {
+            setSelectedFile(item);
+          }
+        }}
+
         onContextMenu={(e) => {
           e.preventDefault();
 
