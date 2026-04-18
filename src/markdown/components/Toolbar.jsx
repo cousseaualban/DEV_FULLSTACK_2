@@ -5,8 +5,8 @@ export default function Toolbar({onAddFolder, onAddFile, setItems, selectedFolde
     return(
         <div className="flex justify-between mb-3">
             <div className="flex gap-2">
-                <button className="bg-white hover:bg-gray-200 border py-2 px-4 rounded" onClick={onAddFolder}>Add Folder</button>
-                <button className="bg-white hover:bg-gray-200 border py-2 px-4 rounded" onClick={onAddFile}>Add File</button>
+                <button className="bg-white hover:bg-gray-200 border py-2 px-4 rounded" onClick={onAddFolder}>Ajouter un dossier</button>
+                <button className="bg-white hover:bg-gray-200 border py-2 px-4 rounded" onClick={onAddFile}>Ajouter un fichier</button>
             </div>
             <input
                 type="file"

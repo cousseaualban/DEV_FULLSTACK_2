@@ -32,7 +32,7 @@ export default function ContextMenu({ contextMenu, setContextMenu, setItems }) {
           setContextMenu(null);
         }}
       >
-        ✏️ Rename
+        ✏️ Renommer
       </div>
 
 
@@ -43,7 +43,7 @@ export default function ContextMenu({ contextMenu, setContextMenu, setItems }) {
           setContextMenu(null);
         }}
       >
-        🗑 Delete
+        🗑 Supprimer
       </div>
 
    
@@ -51,7 +51,7 @@ export default function ContextMenu({ contextMenu, setContextMenu, setItems }) {
         style={{ padding: "6px", cursor: "pointer" }}
         onClick={() => setContextMenu(null)}
       >
-        Cancel
+        Retour
       </div>
     </div>
   );
